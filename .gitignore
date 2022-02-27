@@ -1,0 +1,8 @@
+# .gitignore
+
+# folders
+node_modules/
+
+# files
+package-lock.json
+*.min.js

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bid Sniper</title>
+</head>
+
+<script type="text/javascript">
+    function clicked(btn = 'bid') {
+        console.log(btn + ' clicked');
+    }
+</script>
+
+<body>
+
+    <!-- start of html copy and pasted -->
+    <!-- open modal btn -->
+    <a data-cta="placebid"
+        data-url="https://www.ebay.com/bfl/placebid/284627847677?_trksid=p2047675.m4905&amp;currencyId=USD"
+        data-itemid="284627847677" data-initelment="hidden_init_module" data-elementid="MaxBidId"
+        data-loading="Loading..." data-elementparams="maxbid" data-signinurl="" data-signinstate="true"
+        data-fallbackurl="https://cgi.ebay.com/ws/eBayISAPI.dll?ViewItem&amp;cta=placebid&amp;item=284627847677&amp;fromPage=2047675&amp;fb=2"
+        role="button" id="bidBtn_btn" style="" class="btn btn-prim  vi-VR-btnWdth-XL vilens-item"
+        href="https://cgi.ebay.com/ws/eBayISAPI.dll?ViewItem&amp;cta=placebid&amp;item=284627847677&amp;fromPage=2047675&amp;fb=2"
+        vib="vib" rel="nofollow" onclick="clicked('modal')">
+        Place bid</a>
+    <!-- vilens modal -->
+    <div class="vilens-modal" tabindex="-1" role="dialog" id="vilens-modal0" aria-label="Bid layer is opened."
+        aria-hidden="false" style="z-index: 10100050; width: 540px; top: 490px; left: 392px;">
+        <div class="vilens-modal-body" id="MODAL_BODY" role="document" style="display: block;">
+            <div class="placebid_layer_wrapper">
+                <div class="app-bidlayer-main-wrapper" id="s0-1">
+                    <div class="app-bidlayer-itemsummary-wrapper">
+                        <div class="placebid_layer_priceinfo">
+                            <span class="app-bidlayer-price "><span>
+                                    <span class="status_BLACK"><span class="ui-text-span__BOLD">US $11.50</span></span>
+                                </span>
+                            </span>
+
+                            <span class="placebid_layer_priceinfo_plus">+</span>
+
+                            <span class="placebid_layer_priceinfo_shipping">
+                                <span>
+                                    <span>$4.00 for shipping</span>
+                                </span>
+                            </span>
+                        </div>
+
+                        <div class="placebid_layer_bidinfo">
+                            <div class="app-counter-bidlayer-wrapper">
+                                <span class="app-counter-wrapper urgency" id="_counter_itemEndDate" role="timer"
+                                    data-itemid="185272315753" data-urgencytime="2" data-boldtime="10800"
+                                    data-secondsleft="249" data-counterstarttime="86400" data-minutetext="m"
+                                    data-secondtext="s">
+                                    <span class="app-counter-a11y clipped">Time left</span>
+                                    <span id="_counter_itemEndDate_timeLeft"> 0m 10s</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-bidlayer-child-wrapper app-bidlayer-education-bidsection-wrapper">
+                    <div class="app-bidlayer-bidsection-placeholder">
+                        <div class="app-bidlayer-bidsection-wrapper" id="s0-1-17">
+                            <div class="app-bidlayer-bidsection-custombid">
+                                <span class="app-bidlayer-bidsection-custombid-input-wrapper">
+                                    <label class="app-bidlayer-bidsection-custombid-currency-symbol"><span>
+                                            <!--F#f_0--><span>
+                                                <!--F#f_0-->US $
+                                                <!--F/-->
+                                            </span>
+                                            <!--F/-->
+                                        </span>
+                                    </label>
+                                    <input type="text" id="app-bidlayer-bidsection-input"
+                                        aria-label="Bid USD - Enter bid amount" aria-describedby="statusmsg" name="Bid"
+                                        maxlength="10"
+                                        data-url="/bfl/placebid/185272315753?action=placebid&amp;_trksid=p2471758.m4916&amp;currencyId=USD&amp;se=1"
+                                        data-currency="USD" value="">
+                                </span>
+                                <button class="button-placebid" data-sid="m4952.l9220"
+                                    data-fallback="http://offer.ebay.com/ws/eBayISAPI.dll?MakeBid&amp;mode=1&amp;item=185272315753&amp;fromPage=2047675&amp;fb=2&amp;transid=0&amp;bu=bid"
+                                    data-url="/bfl/placebid/185272315753?action=placebid&amp;_trksid=p2471758.m4916&amp;currencyId=USD&amp;se=1"
+                                    data-currency="USD" aria-label="Place a bid"
+                                    aria-describedby="app-bidlayer-disclaimer-wrapper0" onclick="clicked()">Bid</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end html -->
+
+    <!-- scripts after window load -->
+    <script type="text/javascript" src="timer.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script type="text/javascript" src="sniper.js"></script>
+    <script type="text/javascript">
+        // start psuedo-timer at 10s countdown
+        startTimer(9, '#_counter_itemEndDate_timeLeft');
+
+
+        // testing
+        var sniper = new Sniper({
+            maxBid: 15,
+            cantLose: true,
+            percentOverBudget: 0.15,
+            dryRun: false
+        });
+        
+
+        // // real time
+        // var sniper = new Sniper({ maxBid: 15, cantLose: true, percentOverBudget: 0.15, dryRun: false });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "bid-sniper",
+  "version": "0.1.0",
+  "description": "A bid script to inject into an ebay page",
+  "main": "sniper.min.js",
+  "dependencies": {
+    "minify": "8.0.x"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "minify sniper.js > sniper.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "prviate": true
+}
